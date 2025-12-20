@@ -1,10 +1,121 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<!-- ============================================
+     METAETIQUETAS ESENCIALES Y OPEN GRAPH
+     ============================================ -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="color-scheme" content="light dark">
-<title>NutriLearn Academy: Curso Interactivo & IA</title>
+<!-- Título principal para SEO y redes sociales -->
+<title>NutriLearn Academy: Curso Interactivo de Nutrición con IA</title>
+<!-- Descripción para resultados de búsqueda -->
+<meta name="description" content="Aprende nutrición con ciencia e IA. Calcula tus macros, analiza comidas y crea planes personalizados con nuestro tutor virtual. Tu evolución nutricional empieza aquí.">
+<meta name="keywords" content="nutrición, curso nutrición, aprender nutrición, macronutrientes, calcular calorías, TDEE, analizador de comida IA, plan alimenticio, salud, bienestar">
+<meta name="author" content="NutriLearn Academy">
+<meta name="copyright" content="NutriLearn Academy">
+
+<!-- ============================================
+     OPEN GRAPH (Facebook, LinkedIn, WhatsApp)
+     ============================================ -->
+<meta property="og:type" content="website">
+<!-- 🔗 URL CANÓNICA DE TU PÁGINA -->
+<meta property="og:url" content="https://gemini-flash.netlify.app/">
+<meta property="og:title" content="NutriLearn Academy: Domina la Nutrición con Ciencia e IA">
+<meta property="og:description" content="La primera academia interactiva que combina bioquímica, cálculo de energía y un asistente de IA para tu aprendizaje personalizado. ¡Transforma tu conocimiento en acción!">
+<!-- 🖼️ URL DE TU IMAGEN PARA COMPARTIR -->
+<meta property="og:image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr56Dr76An4sh_diFko9ElRRBMVPdjPXyLzUc6A5bvbg&s=10">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_ES">
+
+<!-- ============================================
+     TWITTER CARD (Apariencia en Twitter/X)
+     ============================================ -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@NutriLearn_Acad">
+<meta name="twitter:creator" content="@NutriLearn_Acad">
+<meta name="twitter:title" content="NutriLearn Academy: Aprende Nutrición con un Tutor de IA">
+<meta name="twitter:description" content="Calcula tus necesidades energéticas, analiza fotos de comida y genera menús al instante. Educación nutricional del siglo XXI.">
+<meta name="twitter:image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr56Dr76An4sh_diFko9ElRRBMVPdjPXyLzUc6A5bvbg&s=10">
+
+<!-- ============================================
+     FAVICON Y THEME COLOR
+     ============================================ -->
+<!-- (Opcional) Si subes favicons a tu dominio Netlify, usa estas líneas -->
+<!-- <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest"> -->
+<meta name="theme-color" content="#faf9f6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#030712" media="(prefers-color-scheme: dark)">
+
+<!-- ============================================
+     ESTRUCTURA JSON-LD (SCHEMA.ORG)
+     (Lo más importante para SEO técnico)
+     ============================================ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://gemini-flash.netlify.app/#organization",
+      "name": "NutriLearn Academy",
+      "url": "https://gemini-flash.netlify.app/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr56Dr76An4sh_diFko9ElRRBMVPdjPXyLzUc6A5bvbg&s=10",
+        "width": 1200,
+        "height": 630
+      },
+      "description": "Academia especializada en educación nutricional interactiva con inteligencia artificial.",
+      "sameAs": [
+        "https://www.facebook.com/NutriLearnAcademy",
+        "https://www.instagram.com/nutrilearn_academy/",
+        "https://twitter.com/NutriLearn_Acad"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://gemini-flash.netlify.app/#website",
+      "url": "https://gemini-flash.netlify.app/",
+      "name": "NutriLearn Academy",
+      "description": "Curso interactivo de nutrición con asistente de IA",
+      "publisher": {
+        "@id": "https://gemini-flash.netlify.app/#organization"
+      }
+    },
+    {
+      "@type": "Course",
+      "@id": "https://gemini-flash.netlify.app/#course",
+      "name": "Curso Interactivo de Nutrición con IA",
+      "description": "Un curso completo que enseña los fundamentos de la nutrición, el cálculo de macronutrientes y el balance energético, utilizando herramientas interactivas y un asistente de inteligencia artificial.",
+      "url": "https://gemini-flash.netlify.app/",
+      "provider": {
+        "@type": "Organization",
+        "@id": "https://gemini-flash.netlify.app/#organization"
+      },
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": ["online", "interactive"],
+        "location": {
+          "@type": "VirtualLocation",
+          "url": "https://gemini-flash.netlify.app/"
+        }
+      },
+      "about": "Nutrición, Bioquímica de Alimentos, Metabolismo, Macronutrientes, Cálculo de Calorías, Planificación Alimenticia",
+      "educationalLevel": "beginner",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://gemini-flash.netlify.app/"
+      }
+    }
+  ]
+}
+</script>
 
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
