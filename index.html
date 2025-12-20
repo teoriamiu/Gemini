@@ -759,12 +759,12 @@ callGemini: async function(prompt, systemInstruction = "Tu nombre es Agustín D�
         const thinking = document.createElement('div');
         thinking.id = 'thinking-bubble';
         thinking.className = 'flex gap-4';
-        thinking.innerHTML = '<div class="w-8 h-8 bg-indigo-100 dark:bg-indigo-900 rounded-full flex items-center justify-center">🤖</div><div class="bg-white dark:bg-gray-900 p-4 rounded-2xl border border-slate-100 dark:border-gray-800"><div class="loader"></div></div>';
+        thinking.innerHTML = '<div class="w-8 h-8 bg-indigo-100 dark:bg-indigo-900 rounded-full flex items-center justify-center"></div><div class="bg-white dark:bg-gray-900 p-4 rounded-2xl border border-slate-100 dark:border-gray-800"><div class="loader"></div></div>';
         
         container.appendChild(thinking);
         container.scrollTop = container.scrollHeight;
         
-        const response = await this.callGemini(text, "Tu nombre es Agustín Diaz y eres un tutor de nutrición certificado. Responde con base científica, sé claro y conciso.");
+        const response = await this.callGemini(text, "Tu nombre es Agustín Diaz y eres un maestro de nutrición certificado. Responde con base científica, sé claro y conciso. Estas únicamente para hablar de nutrición");
         
         thinking.remove();
         this.addMessage('ai', response);
