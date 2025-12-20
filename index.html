@@ -406,14 +406,14 @@ Aplica lo aprendido. Usa la Inteligencia Artificial para analizar comidas reales
 </div>
 <div class="lg:col-span-8 flex flex-col h-[600px] glass-panel rounded-3xl overflow-hidden shadow-2xl border-0">
 <div class="bg-gray-950 p-4 flex justify-between items-center border-b border-gray-900">
-<span class="text-gray-100 font-bold flex items-center gap-2"><span class="w-2 h-2 bg-emerald-400 rounded-full"></span> Tutor IA En Línea</span>
+<span class="text-gray-100 font-bold flex items-center gap-2"><span class="w-2 h-2 bg-emerald-400 rounded-full"></span>Agustín Díaz</span>
 <button onclick="app.clearChat()" class="text-xs text-gray-400 hover:text-white uppercase font-bold tracking-wider">Limpiar</button>
 </div>
 <div id="chat-container" class="flex-1 overflow-y-auto p-6 space-y-6 bg-slate-50 dark:bg-gray-950 chat-scroll">
 <div class="flex gap-4">
 <div class="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center text-lg flex-shrink-0">👽</div>
 <div class="bg-white dark:bg-gray-900 p-4 rounded-2xl rounded-tl-none shadow-sm text-slate-700 dark:text-gray-200 text-base border border-slate-100 dark:border-gray-800">
-<p>¡Hola! Soy tu asistente de nutrición. Puedo analizar los ingredientes de tus comidas, explicarte conceptos complejos o crear un plan de alimentación basado en tus macros. ¿Por dónde empezamos?</p>
+<p>¡Hola! Soy Agustín Diaz, tu maestro de nutrición. Puedo analizar los ingredientes de tus comidas, explicarte conceptos complejos o crear un plan de alimentación basado en tus macros. ¿Por dónde empezamos?</p>
 </div>
 </div>
 </div>
@@ -766,7 +766,7 @@ callGemini: async function(prompt, systemInstruction = "Tu nombre es Agustín D�
         container.appendChild(thinking);
         container.scrollTop = container.scrollHeight;
         
-        const response = await this.callGemini(text, "Tu nombre es Agustín Diaz y eres un maestro de nutrición certificado. Responde con base científica, sé claro y conciso. Estas únicamente para hablar de nutrición");
+        const response = await this.callGemini(text, "Tu nombre es Agustín Diaz y eres mi maestro de nutrición certificado. Responde con base científica, sé claro y conciso. Estas únicamente para hablar de nutrición");
         
         thinking.remove();
         this.addMessage('ai', response);
