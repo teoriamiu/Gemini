@@ -139,6 +139,10 @@ body {
     filter: brightness(0.9) contrast(1.1);
   }
 }
+
+#chat-input::-webkit-search-cancel-button {
+    display: none;
+}
 </style>
 </head>
 <body class="flex h-screen overflow-hidden">
@@ -211,7 +215,7 @@ La nutrición es la ciencia de cómo los alimentos nutren tu cuerpo. Esta plataf
 </div>
 <div class="glass-panel p-6 rounded-2xl border-t-4 border-indigo-500 hover:-translate-y-1 transition-transform cursor-pointer" onclick="app.navigate('ai-suite')">
 <div class="flex justify-between items-start mb-4">
-<div class="p-3 bg-indigo-100 dark:bg-indigo-900/40 rounded-xl text-2xl">🤖</div>
+<div class="p-3 bg-indigo-100 dark:bg-indigo-900/40 rounded-xl text-2xl">👽</div>
 <span class="text-xs font-bold bg-indigo-100 dark:bg-indigo-900/40 text-indigo-600 dark:text-indigo-300 px-2 py-1 rounded">Interactivo</span>
 </div>
 <h3 class="text-xl font-bold text-slate-800 dark:text-gray-100 mb-2">Consultor IA</h3>
@@ -406,7 +410,7 @@ Aplica lo aprendido. Usa la Inteligencia Artificial para analizar comidas reales
 </div>
 <div id="chat-container" class="flex-1 overflow-y-auto p-6 space-y-6 bg-slate-50 dark:bg-gray-950 chat-scroll">
 <div class="flex gap-4">
-<div class="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center text-lg flex-shrink-0">🤖</div>
+<div class="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center text-lg flex-shrink-0">👽</div>
 <div class="bg-white dark:bg-gray-900 p-4 rounded-2xl rounded-tl-none shadow-sm text-slate-700 dark:text-gray-200 text-base border border-slate-100 dark:border-gray-800">
 <p>¡Hola! Soy tu asistente de nutrición. Puedo analizar los ingredientes de tus comidas, explicarte conceptos complejos o crear un plan de alimentación basado en tus macros. ¿Por dónde empezamos?</p>
 </div>
@@ -414,10 +418,10 @@ Aplica lo aprendido. Usa la Inteligencia Artificial para analizar comidas reales
 </div>
 <div class="p-4 bg-white dark:bg-gray-950 border-t border-slate-100 dark:border-gray-900">
 <div class="relative flex items-center">
-<input type="search" inputmode="text" id="chat-input" placeholder="Haz una pregunta general (Ej: ¿Por qué es importante la fibra?)..." class="w-full bg-slate-100 dark:bg-gray-900 border-none rounded-2xl py-4 pl-5 pr-14 focus:ring-2 focus:ring-indigo-500 outline-none text-slate-700 dark:text-white placeholder:text-xs placeholder-slate-400 dark:placeholder-gray-500">
-<button onclick="app.sendChat()" class="absolute right-2 p-2 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 transition-transform active:scale-95">
-➤
-</button>
+    <input type="search" inputmode="text" id="chat-input" placeholder="Pregunta sobre nutrición" class="w-full bg-slate-100 border-none rounded-2xl py-4 pl-5 pr-14 focus:ring-2 focus:ring-indigo-500 outline-none text-slate-700 placeholder-slate-400">
+    <button onclick="app.sendChat()" class="absolute right-2 p-2 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 transition-transform active:scale-95">
+        ➤
+    </button>
 </div>
 </div>
 </div>
@@ -676,7 +680,7 @@ callGemini: async function(prompt, systemInstruction = "Tu nombre es Agustín D�
         const wrapper = document.createElement('div');
         wrapper.className = `flex gap-4 ${isUser ? 'justify-end' : ''}`;
         
-        const avatar = isUser ? '' : '<div class="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center">🤖</div>';
+        const avatar = isUser ? '' : '<div class="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center text-lg flex-shrink-0">👽</div>';
         const bubble = document.createElement('div');
         bubble.className = isUser
             ? 'bg-indigo-600 text-white p-4 rounded-2xl rounded-tr-none'
