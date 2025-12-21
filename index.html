@@ -790,12 +790,10 @@ const app = {
     },
     
     // Función simulada para análisis con IA (sin backend real)
-    callGemini: async function(prompt, systemInstruction = "Tu nombre es Juan Manuel y eres un experto analista político argentino.") {
+    callGemini: async function(prompt, systemInstruction = "") {
         // Simulación de respuesta sin backend real
         const responses = {
-            "default": `Como analista político especializado en Argentina, puedo decirte que el sistema político argentino es complejo y dinámico. Los principales partidos son La Libertad Avanza (actual gobierno), Unión por la Patria (principal oposición) y Juntos por el Cambio. El sistema electoral argentino utiliza el método D'Hondt para la distribución de bancas. ¿Hay algún aspecto específico que te gustaría analizar?`,
-            "discurso": `Basado en el análisis del discurso, puedo identificar los principales temas: economía (mencionado 5 veces), seguridad (3 veces), educación (2 veces). El tono general es ${Math.random() > 0.5 ? "convocatorio" : "defensivo"}. Las metáforas utilizadas sugieren un enfoque ${Math.random() > 0.5 ? "de confrontación" : "de unidad"}.`,
-            "estrategia": `Para una estrategia de campaña electoral efectiva en Argentina, recomiendo: 1) Enfocarse en el conurbano bonaerense (40% del electorado), 2) Utilizar redes sociales con mensajes segmentados por edad, 3) Presentar propuestas concretas sobre inflación y seguridad, 4) Realizar alianzas con partidos provinciales.`
+            "default": ``
         };
         
         // Identificar el tipo de pregunta
@@ -842,12 +840,7 @@ const app = {
         this.addMessage('user', `Analiza este discurso: ${input}`);
         this.addMessage('ai', 'Analizando contenido político y retórica...');
         
-        const prompt = `Actúa como analista político. Analiza: "${input}". 
-        1. Temas principales identificados. 
-        2. Tono y retórica utilizada. 
-        3. Posible audiencia objetivo. 
-        4. Efectividad comunicacional. 
-        5. Contexto político probable.`;
+        const prompt = ``;
         
         const response = await this.callGemini(prompt);
         this.addMessage('ai', response);
@@ -864,16 +857,7 @@ const app = {
         btn.disabled = true;
         btn.innerHTML = '<span class="loader"></span>';
         
-        const prompt = `Crea una estrategia detallada para: ${goal}. 
-        ${party ? `Para el partido/coalición: ${party}.` : ''}
-        Incluye:
-        1. Objetivos principales
-        2. Públicos objetivo
-        3. Mensajes clave
-        4. Canales de comunicación
-        5. Posibles aliados
-        6. Riesgos y contingencias
-        7. Métricas de éxito`;
+        const prompt = ``;
         
         
         this.addMessage('user', `Genera una estrategia para ${goal}`);
@@ -904,7 +888,7 @@ const app = {
         container.appendChild(thinking);
         container.scrollTop = container.scrollHeight;
         
-        const response = await this.callGemini(text, "Tu nombre es Juan Manuel y eres mi analista político argentino certificado. Responde con base en datos reales del sistema político argentino, sé claro y estratégico. Estas únicamente para hablar de política argentina");
+        const response = await this.callGemini(text, "");
         
         thinking.remove();
         this.addMessage('ai', response);
